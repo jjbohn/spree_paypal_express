@@ -94,6 +94,7 @@ module Spree
           else
             order_ship_address.state_name = ship_address["state"]
           end
+          order_ship_address.state_name = @order.ship_address.state_name unless order_ship_address.state_name
           order_ship_address.save!
 
           @order.ship_address = order_ship_address
